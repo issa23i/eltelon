@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFAF0;}
+	.st1{display:none;}
+	.st2{fill:#FFD580;stroke:#000000;stroke-width:13;stroke-miterlimit:10;}
+	.st3{fill:#6B1C1B;stroke:#000000;stroke-width:14;stroke-miterlimit:10;}
+</style>
+<g id="Capa_5">
+	<g>
+		<rect x="-240" y="-65" class="st0" width="1080" height="1083"/>
+	</g>
+	<g>
+		<rect x="-240" y="-65" class="st0" width="1080" height="1083"/>
+	</g>
+</g>
+<g id="Capa_4">
+	<rect x="-60.4" y="656" style="fill:none;" width="726" height="146"/>
+	
+		<text transform="matrix(1 0 0 1 -60.421 777.3584)" style="stroke:#FFFFFF;stroke-miterlimit:10; font-family:'Poppins-Bold'; font-size:164px;">EL TELÓN</text>
+	<rect x="-87" y="823.5" style="fill:none;" width="774" height="48"/>
+	<text transform="matrix(1 0 0 1.2 -87.0165 849.7764)"><tspan x="0" y="0" style="font-family:'Raleway-Bold'; font-size:36px;">ASOCIACIÓN CULTURAL DE ARTES ESCÉNI</tspan><tspan x="705.9" y="0" style="font-family:'Raleway-Bold'; font-size:36px;">-</tspan></text>
+</g>
+<g id="Capa_1" class="st1">
+	
+		<image style="display:inline;overflow:visible;" width="1024" height="1024" xlink:href="../../logotipotelon.png"  transform="matrix(1.0547 0 0 1.0547 -240 -62)">
+	</image>
+</g>
+<g id="Capa_3">
+	<rect x="-14" y="1.5" class="st2" width="633.2" height="598.5"/>
+</g>
+<g id="Capa_2">
+	<path class="st3" d="M169.2,3.1c-29,162.4-124,291.5-124,291.5l33.3,5.4C284.6,177.3,293.2,3.1,293.2,3.1H169.2z"/>
+	<path class="st3" d="M169.2,3.1H81c0,0-16,230.2-65.4,283.9l29.6,7.5C45.2,294.6,173.5,95.6,169.2,3.1z"/>
+	<path class="st3" d="M81,3.1h-95v281.8l29.6,2.2C15.6,287,62.5,248.3,81,3.1z"/>
+	<polygon class="st3" points="-14,284.9 -14,326.8 72.4,335.4 78.5,299.9 	"/>
+	<path class="st3" d="M-14,326.8V600h65.4c0,0,0-180.6-32.7-269.9L-14,326.8z"/>
+	<path class="st3" d="M51.4,600h95c0,0-3.7-172.1-74-264.6l-53.7-5.3C18.7,330.1,50.2,355.9,51.4,600z"/>
+	<path class="st3" d="M169.2,1.5c-29,162.4-124,291.5-124,291.5l33.3,5.4C284.6,175.7,293.2,1.5,293.2,1.5H169.2z"/>
+	<path class="st3" d="M169.2,1.5H81c0,0-16,230.2-65.4,283.9l29.6,7.5C45.2,293,173.5,94,169.2,1.5z"/>
+	<path class="st3" d="M81,1.5h-95v281.8l29.6,2.2C15.6,285.4,62.5,246.7,81,1.5z"/>
+	<polygon class="st3" points="-14,283.3 -14,325.2 72.4,333.8 78.5,298.3 	"/>
+	<path class="st3" d="M-14,325.2v273.2h65.4c0,0,0-180.6-32.7-269.9L-14,325.2z"/>
+	<path class="st3" d="M51.4,598.4h95c0,0-3.7-172.1-74-264.6l-53.7-5.3C18.7,328.5,50.2,354.3,51.4,598.4z"/>
+	<path class="st3" d="M436,1.5C465,163.9,560,293,560,293l-33.3,5.4C320.6,175.7,312,1.5,312,1.5H436z"/>
+	<path class="st3" d="M436,1.5h88.2c0,0,16,230.2,65.4,283.9L560,293C560,293,431.6,94,436,1.5z"/>
+	<path class="st3" d="M524.2,1.5h95v281.8l-29.6,2.2C589.6,285.4,542.7,246.7,524.2,1.5z"/>
+	<polygon class="st3" points="619.2,283.3 619.2,325.2 532.8,333.8 526.7,298.3 	"/>
+	<path class="st3" d="M619.2,325.2v273.2h-65.4c0,0,0-180.6,32.7-269.9L619.2,325.2z"/>
+	<path class="st3" d="M553.8,598.4h-95c0,0,3.7-172.1,74-264.6l53.7-5.3C586.5,328.5,555,354.3,553.8,598.4z"/>
+</g>
+</svg>
