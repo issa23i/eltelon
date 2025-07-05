@@ -8,10 +8,6 @@ import { Footer } from '../../shared/footer/footer';
   standalone: true,
   imports: [RouterOutlet, Header, Footer],
   templateUrl: './layout.html',
-  styleUrls: ['./layout.scss']
+  styleUrls: ['./layout.scss'],
 })
-export class Layout {
- 
-
-  currentYear = new Date().getFullYear();
-}
+export class Layout {}
