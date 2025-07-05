@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #222;
+
+  a {
+    color: white;
+    text-decoration: none;
+    &.active {
+      border-bottom: 2px solid #ffdd57;
+    }
+  }
+}
