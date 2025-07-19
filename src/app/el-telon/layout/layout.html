@@ -1,35 +1,3 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer mode="over" position="start">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home" (click)="drawer.close()">Inicio</a>
-      <a mat-list-item routerLink="/obras" (click)="drawer.close()">Obras</a>
-      <a mat-list-item routerLink="/galeria" (click)="drawer.close()"
-        >Galería</a
-      >
-      <a mat-list-item routerLink="/casting" (click)="drawer.close()"
-        >Casting</a
-      >
-      <a mat-list-item routerLink="/quienes-somos" (click)="drawer.close()"
-        >Quiénes somos</a
-      >
-      <a mat-list-item routerLink="/hazte-socio" (click)="drawer.close()"
-        >Hazte socia</a
-      >
-      <a mat-list-item routerLink="/contacto" (click)="drawer.close()"
-        >Contacto</a
-      >
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Asociación Cultural El Telón</span>
-    </mat-toolbar>
-
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-menu-side-panel></app-menu-side-panel>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

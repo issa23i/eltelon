@@ -1,0 +1,11 @@
+<div
+  class="menu-reveal-zone"
+  (mouseenter)="menuVisible = true"
+  (mouseleave)="menuVisible = false"
+>
+  <nav class="menu-panel" [class.open]="menuVisible">
+    <div class="menu-item" *ngFor="let link of menuLinks">
+      <a [routerLink]="link.path" (click)="closeMenu()">{{ link.label }}</a>
+    </div>
+  </nav>
+</div>

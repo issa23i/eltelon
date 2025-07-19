@@ -1,11 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hazte-socio',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './hazte-socio.html',
-  styleUrls: ['./hazte-socio.scss']
+  styleUrls: ['./hazte-socio.scss'],
 })
-export class HazteSocio {
-
-}
+export class HazteSocio {}
