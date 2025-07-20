@@ -22,7 +22,43 @@ export class MenuSidePanel {
 
   menuVisible = false;
 
+  private touchStartX = 0;
+  private touchCurrentX = 0;
+  private swipeThreshold = 60;
+
   closeMenu() {
     this.menuVisible = false;
+  }
+
+  onTouchStart(e: TouchEvent) {
+    this.touchStartX = e.touches[0].clientX;
+  }
+
+  onTouchMove(e: TouchEvent) {
+    this.touchCurrentX = e.touches[0].clientX;
+    // Evita scroll mientras se hace swipe sobre el telón
+    e.preventDefault();
+  }
+
+  onTouchEnd(_e: TouchEvent) {
+    console.log('dfsa', _e);
+
+    const delta = this.touchCurrentX - this.touchStartX;
+    const panel = document.querySelector('.menu-panel') as HTMLElement;
+
+    if (panel) {
+      panel.style.transition = 'transform 0.6s ease'; // reactiva animación
+      if (delta > this.swipeThreshold) {
+        this.menuVisible = true;
+        panel.style.transform = 'translateX(0)';
+      } else {
+        this.menuVisible = false;
+        panel.style.transform = 'translateX(-180px)';
+      }
+    }
+
+    // reset para el siguiente gesto
+    this.touchStartX = 0;
+    this.touchCurrentX = 0;
   }
 }

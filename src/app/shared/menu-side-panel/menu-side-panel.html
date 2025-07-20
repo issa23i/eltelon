@@ -2,6 +2,9 @@
   class="menu-reveal-zone"
   (mouseenter)="menuVisible = true"
   (mouseleave)="menuVisible = false"
+  (touchstart)="onTouchStart($event)"
+  (touchmove)="onTouchMove($event)"
+  (touchend)="onTouchEnd($event)"
 >
   <nav class="menu-panel" [class.open]="menuVisible">
     <div class="menu-item" *ngFor="let link of menuLinks">

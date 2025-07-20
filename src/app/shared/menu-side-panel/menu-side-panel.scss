@@ -1,63 +1,77 @@
+/* menu-side-panel.scss */
 @keyframes telonVivo {
   0% {
-    transform: translateX(-216px);
+    transform: translateX(-180px);
   }
   50% {
-    transform: translateX(-206px);
+    transform: translateX(-170px);
   }
   100% {
-    transform: translateX(-216px);
+    transform: translateX(-180px);
+  }
+}
+
+@keyframes revealPulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
   }
 }
 
 .menu-reveal-zone {
+  touch-action: pan-y; // No permite scroll horizontal
   position: fixed;
   top: 0;
   left: 0;
+  width: 60px;
   height: 100vh;
-  width: 40px;
   z-index: 1000;
   box-shadow: 6px 0 12px rgba(0, 0, 0, 0.5);
 
+  /* La textura asomando */
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 40px;
+    width: 35px;
     height: 100%;
     background-image: url("../../../assets/img/textura-telon.png");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
   }
 
   .menu-panel {
-    background-image: url("../../../assets/img/textura-telon.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: translateX(-180px);
-    animation: telonVivo 3s ease-in-out infinite;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 240px;
     height: 100%;
-    transform: translateX(-180%);
-    transition: transform 0.6s ease-in-out;
+    background-image: url("../../../assets/img/textura-telon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.6);
     overflow: hidden;
-    padding: 0;
+
+    /* Telón cerrado */
+    transform: translateX(-180px);
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+    animation: telonVivo 3s ease-in-out infinite;
 
     &.open {
+      /* Telón abierto */
       transform: translateX(0);
       animation: none;
     }
 
     .menu-item {
       height: 100px;
-      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
