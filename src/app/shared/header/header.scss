@@ -1,15 +1,38 @@
-.nav {
+.app-toolbar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #222;
+  justify-content: space-between;
+  background: linear-gradient(to right, #4b0000, #800000);
+  color: #ffd700;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  a {
-    color: white;
-    text-decoration: none;
-    &.active {
-      border-bottom: 2px solid #ffdd57;
-    }
+.site-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* esconder el menú horizontal en móvil */
+.horizontal-nav {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+/* esconder botón hamburguesa en desktop */
+.menu-toggle-btn {
+  display: none;
+  @media (max-width: 767px) {
+    display: inline-flex;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -1,0 +1,10 @@
+<nav class="horizontal-nav">
+  <a
+    *ngFor="let link of menuLinks"
+    [routerLink]="link.path"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    {{ link.label }}
+  </a>
+</nav>

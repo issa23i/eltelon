@@ -1,0 +1,14 @@
+.horizontal-nav {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+
+    &.active {
+      border-bottom: 2px solid #ffd700;
+    }
+  }
+}
