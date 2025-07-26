@@ -1,5 +1,37 @@
+//breakpoints
+@import "@taiga-ui/core/styles/taiga-ui-local";
+
 .tabs {
   inline-size: "calc(100% - 15.625rem)";
   justify-content: flex-end;
   box-shadow: none;
+  height: 80px;
+  align-items: center;
+  width: 42vw;
+}
+.logo-container img {
+  justify-content: flex-start;
+  width: auto;
+  height: 62px;
+}
+h2,
+h1 {
+  margin: 4px 8px 8px;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  padding: 12px;
+}
+
+@media #{ $tui-desktop } {
+  h2 {
+    display: none;
+  }
+  .test,
+  .column {
+    align-self: center;
+  }
+  .logo-container > img {
+    height: 52px;
+  }
 }

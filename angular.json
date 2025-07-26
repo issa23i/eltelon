@@ -31,6 +31,11 @@
                 "glob": "**/*",
                 "input": "node_modules/@taiga-ui/icons/src",
                 "output": "assets/taiga-ui/icons"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -68,7 +73,7 @@
               "sourceMap": true
             },
             "ssr": {
-              "outputPath": "dist/eltelon/browser",
+              "outputPath": "dist/eltelon",
               "index": "src/index.html",
               "polyfills": ["zone.js"],
               "tsConfig": "tsconfig.app.json",
@@ -105,6 +110,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@taiga-ui/icons/src",
+                "output": "assets/taiga-ui/icons"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ]
           }

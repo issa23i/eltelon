@@ -1,13 +1,26 @@
-<tui-tabs-with-more
-  underline="#fff"
-  class="tabs"
-  [activeItemIndex]="activeIndex"
-  (activeItemIndexChange)="onTabChange($event)"
-  tuiTabFocusable
->
-  <ng-container *ngFor="let tab of tabs">
-    <button *tuiItem tuiTab type="button">
-      {{ tab.label }}
-    </button>
-  </ng-container>
-</tui-tabs-with-more>
+<header class="row">
+  <div class="row">
+    <div class="logo-container">
+      <img src="assets/img/logosinletras.png" alt="Logo" />
+    </div>
+    <div class="column">
+      <h1>EL TELÓN</h1>
+
+      <h2><span> </span>Asociación cultural de artes escénicas</h2>
+    </div>
+  </div>
+
+  <tui-tabs-with-more
+    underline="#fff"
+    class="tabs"
+    [activeItemIndex]="activeIndex"
+    (activeItemIndexChange)="onTabChange($event)"
+    tuiTabFocusable
+  >
+    <ng-container *ngFor="let tab of tabs">
+      <button *tuiItem tuiTab type="button">
+        {{ tab.label }}
+      </button>
+    </ng-container>
+  </tui-tabs-with-more>
+</header>

@@ -12,9 +12,14 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { routes } from './el-telon/el-telon.routes';
+import { tuiLanguageSwitcher } from '@taiga-ui/i18n';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    tuiLanguageSwitcher(async () => {
+      return import('@taiga-ui/i18n/languages/spanish');
+    }),
+
     provideRouter(routes),
     provideAnimations(),
     provideZoneChangeDetection({ eventCoalescing: true }),

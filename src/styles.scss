@@ -7,6 +7,7 @@ body {
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
+  padding: 12px;
 }
 
 h1,
@@ -14,4 +15,16 @@ h2,
 h3 {
   font-family: "Playfair Display", serif;
   font-weight: 700;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }

@@ -19,12 +19,12 @@ import { TuiTabs } from '@taiga-ui/kit';
 export class Header {
   readonly tabs = [
     { label: 'Inicio', route: '/' },
-    { label: 'Quiénes somos', route: '/quienes-somos' },
-    { label: 'Obras', route: '/obras' },
-    { label: 'Galería', route: '/galeria' },
     { label: 'Casting', route: '/casting' },
+    { label: 'Obras', route: '/obras' },
     { label: 'Hazte socio', route: '/hazte-socio' },
+    { label: 'Quiénes somos', route: '/quienes-somos' },
     { label: 'Contacto', route: '/contacto' },
+    { label: 'Galería', route: '/galeria' },
   ];
 
   activeIndex = 0;
