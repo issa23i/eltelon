@@ -1,1 +1,13 @@
-
+<tui-tabs-with-more
+  underline="#fff"
+  class="tabs"
+  [activeItemIndex]="activeIndex"
+  (activeItemIndexChange)="onTabChange($event)"
+  tuiTabFocusable
+>
+  <ng-container *ngFor="let tab of tabs">
+    <button *tuiItem tuiTab type="button">
+      {{ tab.label }}
+    </button>
+  </ng-container>
+</tui-tabs-with-more>

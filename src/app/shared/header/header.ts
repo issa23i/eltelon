@@ -1,20 +1,38 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
+import { Router } from '@angular/router';
+import { TuiDataList, TuiDropdown } from '@taiga-ui/core';
+import { TuiTabs } from '@taiga-ui/kit';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [TuiDataList, TuiDropdown, TuiTabs, CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  styleUrls: ['./header.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-  readonly routes = [
-    '/',
-    '/quienes-somos',
-    '/obras',
-    '/galeria',
-    '/casting',
-    '/hazte-socio',
-    '/contacto',
+  readonly tabs = [
+    { label: 'Inicio', route: '/' },
+    { label: 'Quiénes somos', route: '/quienes-somos' },
+    { label: 'Obras', route: '/obras' },
+    { label: 'Galería', route: '/galeria' },
+    { label: 'Casting', route: '/casting' },
+    { label: 'Hazte socio', route: '/hazte-socio' },
+    { label: 'Contacto', route: '/contacto' },
   ];
+
+  activeIndex = 0;
+
+  constructor(private readonly router: Router) {}
+
+  onTabChange(index: number): void {
+    this.activeIndex = index;
+    this.router.navigateByUrl(this.tabs[index].route);
+  }
 }
