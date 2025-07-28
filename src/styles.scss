@@ -17,11 +17,15 @@ h3 {
   font-weight: 700;
 }
 
+main {
+  margin-top: 2rem;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
 }
 .column {
   display: flex;
