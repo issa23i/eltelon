@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.boton-enviar {
+  display: flex;
+  justify-content: flex-end;
+}

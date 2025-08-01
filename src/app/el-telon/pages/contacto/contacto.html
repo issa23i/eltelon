@@ -1,1 +1,66 @@
-<p>contacto works!</p>
+<form
+  tuiForm="l"
+  [formGroup]="form"
+  [style.max-width.rem]="35"
+  (ngSubmit)="enviar()"
+  class="formulario"
+>
+  <tui-textfield>
+    <label tuiLabel>Nombre</label>
+    <input tuiTextfield formControlName="nombre" placeholder="Nombre" />
+  </tui-textfield>
+  <tui-error formControlName="nombre" [error]="[] | tuiFieldError | async" />
+
+  <tui-textfield>
+    <label tuiLabel>Primer apellido</label>
+    <input
+      tuiTextfield
+      formControlName="apellido1"
+      placeholder="Primer apellido"
+    />
+  </tui-textfield>
+  <tui-error formControlName="apellido1" [error]="[] | tuiFieldError | async" />
+
+  <tui-textfield>
+    <label tuiLabel>Segundo apellido (opcional)</label>
+    <input
+      tuiTextfield
+      formControlName="apellido2"
+      placeholder="Segundo apellido (opcional)"
+    />
+  </tui-textfield>
+
+  <tui-input-phone
+    tuiTextfield
+    [countryCode]="'+34'"
+    [countries]="[34]"
+    formControlName="telefono"
+    >Teléfono de contacto
+  </tui-input-phone>
+  <tui-error formControlName="telefono" [error]="[] | tuiFieldError | async" />
+
+  <tui-textfield>
+    <label tuiLabel>Mensaje</label>
+    <textarea
+      formControlName="mensaje"
+      placeholder="Escribe tu mensaje aquí (Opcional)"
+      tuiTextarea
+      [max]="10"
+      [min]="4"
+    ></textarea>
+  </tui-textfield>
+
+  <label>
+    <input tuiCheckbox type="checkbox" formControlName="privacidad" />
+    Acepto la
+    <a href="/privacidad" target="_blank"> política de privacidad </a>
+  </label>
+
+  <label>
+    <input tuiCheckbox type="checkbox" formControlName="condiciones" />
+    Acepto las
+    <a href="/condiciones" target="_blank"> condiciones legales </a>
+  </label>
+
+  <button appearance="primary" tuiButton size="l" type="submit">Enviar</button>
+</form>
