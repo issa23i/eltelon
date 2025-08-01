@@ -38,7 +38,6 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiLabel,
     TuiFieldErrorPipe,
     TuiInputModule,
-
     TuiInputPhoneModule,
     ...TuiTextfield,
     ...TuiHint,

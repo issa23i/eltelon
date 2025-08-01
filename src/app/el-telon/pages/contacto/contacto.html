@@ -50,17 +50,26 @@
     ></textarea>
   </tui-textfield>
 
-  <label>
+  <label class="checkbox-row">
     <input tuiCheckbox type="checkbox" formControlName="privacidad" />
     Acepto la
     <a href="/privacidad" target="_blank"> política de privacidad </a>
   </label>
 
-  <label>
+  <tui-error
+    formControlName="privacidad"
+    [error]="[] | tuiFieldError | async"
+  />
+
+  <label class="checkbox-row">
     <input tuiCheckbox type="checkbox" formControlName="condiciones" />
     Acepto las
     <a href="/condiciones" target="_blank"> condiciones legales </a>
   </label>
+  <tui-error
+    formControlName="condiciones"
+    [error]="[] | tuiFieldError | async"
+  />
 
   <button appearance="primary" tuiButton size="l" type="submit">Enviar</button>
 </form>
