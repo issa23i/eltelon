@@ -1,4 +1,5 @@
 <form
+  [formGroup]="form"
   tuiForm="l"
   [formGroup]="form"
   [style.max-width.rem]="35"
@@ -70,7 +71,12 @@
     formControlName="condiciones"
     [error]="[] | tuiFieldError | async"
   />
-  <re-captcha siteKey="TU_SITE_KEY" (resolved)="onCaptchaResolved($event)">
-  </re-captcha>
+  <re-captcha
+    #captchaRef
+    [siteKey]="siteKey"
+    size="invisible"
+    (resolved)="onCaptchaResolved($event)"
+  ></re-captcha>
+
   <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>

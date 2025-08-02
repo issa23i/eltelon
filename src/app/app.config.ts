@@ -1,5 +1,4 @@
 import { provideEventPlugins } from '@taiga-ui/event-plugins';
-// src/app/app.config.ts
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -18,6 +17,7 @@ import {
   tuiLanguageSwitcher,
 } from '@taiga-ui/i18n';
 import { of } from 'rxjs';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -34,5 +34,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
     provideEventPlugins(),
+    provideHttpClient(withFetch()),
   ],
 };
