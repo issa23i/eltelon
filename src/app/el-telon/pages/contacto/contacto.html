@@ -70,6 +70,7 @@
     formControlName="condiciones"
     [error]="[] | tuiFieldError | async"
   />
-
-  <button appearance="primary" tuiButton size="l" type="submit">Enviar</button>
+  <re-captcha siteKey="TU_SITE_KEY" (resolved)="onCaptchaResolved($event)">
+  </re-captcha>
+  <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>

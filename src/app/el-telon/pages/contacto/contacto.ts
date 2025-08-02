@@ -3,11 +3,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
 import { tuiValidationErrorsProvider } from '@taiga-ui/kit';
 import { of } from 'rxjs';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [ReactiveFormsModule, TaigaSharedModule],
+  imports: [ReactiveFormsModule, TaigaSharedModule, RecaptchaModule],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -31,6 +32,7 @@ export class Contacto {
     mensaje: [''],
     privacidad: [false, Validators.requiredTrue],
     condiciones: [false, Validators.requiredTrue],
+    recaptcha: ['', Validators.required],
   });
 
   constructor() {}
@@ -38,8 +40,17 @@ export class Contacto {
   enviar(): void {
     if (this.form.valid) {
       console.log('Formulario enviado:', this.form.value);
+      // TODO: CONEXIÓN CON BACKEND CHATPCHA E EMAIL
     } else {
       this.form.markAllAsTouched();
+    }
+  }
+
+  onCaptchaResolved(token: string | null) {
+    if (token) {
+      this.form.patchValue({ recaptcha: token });
+    } else {
+      console.error('Captcha token es null');
     }
   }
 }
