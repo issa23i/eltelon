@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
@@ -8,14 +7,13 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TaigaSharedModule],
+  imports: [ReactiveFormsModule, TaigaSharedModule],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     tuiValidationErrorsProvider({
       required: 'Campo obligatorio',
-      email: 'Enter a valid email',
 
       minlength: ({ requiredLength }: { requiredLength: string }) =>
         of(`Mínimo ${+requiredLength - 3} dígitos`),

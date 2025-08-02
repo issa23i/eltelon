@@ -11,6 +11,7 @@ import {
   TuiHint,
   TuiError,
   TuiLabel,
+  TuiTitle,
 } from '@taiga-ui/core';
 import {
   TuiCheckbox,
@@ -38,6 +39,7 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiLabel,
     TuiFieldErrorPipe,
     TuiInputModule,
+    TuiTitle,
     TuiInputPhoneModule,
     ...TuiTextfield,
     ...TuiHint,
@@ -57,6 +59,7 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiError,
     TuiButton,
     TuiSelect,
+    TuiTitle,
     TuiCheckbox,
     TuiTextarea,
     TuiInputChipComponent,
