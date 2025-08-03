@@ -12,6 +12,8 @@ import {
   TuiError,
   TuiLabel,
   TuiTitle,
+  TuiIcon,
+  TuiLink,
 } from '@taiga-ui/core';
 import {
   TuiCheckbox,
@@ -41,6 +43,8 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiInputModule,
     TuiTitle,
     TuiInputPhoneModule,
+    TuiIcon,
+    TuiLink,
     ...TuiTextfield,
     ...TuiHint,
   ],
@@ -65,6 +69,8 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiInputChipComponent,
     TuiInputPhoneModule,
     TuiInputModule,
+    TuiIcon,
+    TuiLink,
   ],
 })
 export class TaigaSharedModule {}

@@ -1,9 +1,35 @@
-// estilos globales
-html,
-body {
-  height: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html,
+body,
+tui-root,
+.t-root-content {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--tui-background);
+}
+
+tui-root > .t-root-content > main {
+  flex: 1;
+  overflow-y: auto;
+}
+tui-root > .t-root-content > main .inner {
+  padding: 12px;
+}
+
+tui-root > .t-root-content {
+  display: flex;
+  flex-direction: column;
+}
+tui-root > .t-root-content > * {
+  min-width: 0;
+  width: 100%;
+}
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
