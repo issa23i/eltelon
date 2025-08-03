@@ -1,5 +1,73 @@
-<footer class="footer">
-  <div class="credito-raleway">
-    © 2025 El Telón · Asociación Cultural de Artes Escénicas
+<!-- footer.html -->
+<footer class="footer" role="contentinfo" aria-label="Pie de página">
+  <div class="footer-grid">
+    <!-- Columna 1: Marca y descripción -->
+    <div class="footer-col footer-branding">
+      <h2>EL TELÓN</h2>
+      <p>Asociación Cultural de Artes Escénicas</p>
+    </div>
+
+    <!-- Columna 2: Enlaces rápidos -->
+    <nav class="footer-col footer-nav" aria-label="Enlaces principales">
+      <a *ngFor="let toLink of linksFooter" tuiLink [routerLink]="toLink.route">
+        {{ toLink.label }}
+      </a>
+    </nav>
+
+    <!-- Columna 3: Contacto -->
+    <div class="footer-col footer-contact">
+      <a href="mailto:info@telon.org">Email: info&#64;telon.org</a>
+      <a href="tel:+34955880011">Tel: +34 955 880 011</a>
+      <address>C/ Teatro, 1 · Sevilla, España</address>
+    </div>
+  </div>
+
+  <!-- Redes sociales + Easter Egg -->
+  <div class="footer-extra">
+    <div class="socials" aria-label="Síguenos en redes sociales">
+      <a
+        tuiLink
+        href="https://facebook/tu-usuario"
+        target="_blank"
+        aria-label="Facebook"
+        tuiHint="Visítanos en facebook"
+      >
+        <tui-icon
+          icon="@tui.facebook"
+          [style.color]="'var(--tui-background)'"
+          [style.fontSize.rem]="1.5"
+        >
+        </tui-icon>
+      </a>
+    </div>
+
+    <a
+      tuiLink
+      href="https://github.com/issa23i"
+      target="_blank"
+      aria-label="GitHub"
+      tuiHint="Descubre otros trabajos de la desarrolladora de esta web"
+    >
+      <tui-icon
+        icon="@tui.github"
+        [style.color]="'var(--tui-background)'"
+        [style.fontSize.rem]="1.5"
+      >
+      </tui-icon>
+    </a>
+  </div>
+
+  <div class="footer-note">
+    © 2025 El Telón · Todos los derechos reservados - Diseñada por
+    <a
+      class="footer-link"
+      tuiLink
+      href="https:isabelpastorlopez.com"
+      target="_blank"
+      aria-label="Isabel Pastor López"
+      tuiHint="Descubre a la desarrolladora de esta web"
+    >
+      Isabel Pastor López
+    </a>
   </div>
 </footer>

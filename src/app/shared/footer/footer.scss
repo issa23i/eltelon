@@ -1,16 +1,107 @@
-.footer {
-  text-align: center;
-  margin-top: 3rem;
-  color: #888;
-  font-size: 0.9rem;
-}
+//breakpoints
+@import "@taiga-ui/core/styles/taiga-ui-local";
 
-.credito-raleway {
-  font-family: "Raleway Thin", sans-serif;
-  font-weight: 100;
-  font-size: 1.1rem;
-  color: var(--mat-sys-color-on-background);
-  letter-spacing: 0.05em;
-  opacity: 0.85;
-  text-align: center;
+.footer {
+  padding: 2rem 1rem;
+  background-color: var(--tui-title);
+  color: var(--tui-background);
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+
+  .footer-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+    justify-items: start;
+    align-items: start;
+  }
+
+  .footer-grid > .footer-col {
+    min-width: 0;
+  }
+
+  // Branding
+  .footer-branding {
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    p {
+      font-weight: 300;
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+    }
+  }
+
+  // Navegación
+  .footer-branding h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem 1.5rem;
+
+    a {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: inherit;
+      font-weight: 500;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--tui-accent);
+      }
+    }
+  }
+
+  .footer-contact a,
+  .footer-contact address {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: inherit;
+    font-style: normal;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .footer-extra {
+    margin: 2rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  .footer-link {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+@media #{ $tui-tablet } {
+  .footer-nav {
+    display: none !important;
+  }
 }

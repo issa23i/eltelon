@@ -11,8 +11,6 @@ export class RecaptchaService {
   constructor(private http: HttpClient) {}
 
   verifyToken(token: string): Observable<any> {
-    console.log(token);
-
     return this.http.post(this.apiUrl, { token });
   }
 }
