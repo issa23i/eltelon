@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -40,7 +39,7 @@ import { environment } from '../../../../environments/environment';
     }),
   ],
 })
-export class Contacto implements AfterViewInit {
+export class Contacto {
   @ViewChild('captchaRef') recaptchaComponent!: any;
   private readonly cdRef = inject(ChangeDetectorRef);
   private readonly fb = inject(FormBuilder);
@@ -61,32 +60,22 @@ export class Contacto implements AfterViewInit {
 
   constructor() {}
 
-  ngAfterViewInit(): void {
-    console.log('Captcha inicializado:', this.recaptchaComponent);
-  }
-
   enviar(): void {
     this.ejecutarCaptcha(); // Solo ejecuta captcha, no envía aún
   }
 
   ejecutarCaptcha(): void {
-    console.log('Ejecutando captcha...');
-
     this.recaptchaComponent.execute();
-    console.log('Captcha ejecutado');
   }
 
   onCaptchaResolved(token: string | null): void {
     this.cdRef.detectChanges();
-    console.log('Token recibido:', token);
     if (token) {
       this.form.patchValue({ recaptcha: token });
 
       if (this.form.valid) {
         this.recaptchaService.verifyToken(token).subscribe({
-          next: (res) => {
-            console.log('Verificación exitosa:', res);
-            console.log('Formulario enviado:', this.form.value);
+          next: (_res) => {
             // TODO: Envío del email
           },
           error: (err) => {
