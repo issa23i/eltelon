@@ -100,6 +100,13 @@
     text-decoration: underline;
   }
 }
+.disabled {
+  pointer-events: none;
+  color: var(--tui-border);
+  opacity: 0.6;
+  cursor: default;
+}
+
 @media #{ $tui-tablet } {
   .footer-nav {
     display: none !important;
