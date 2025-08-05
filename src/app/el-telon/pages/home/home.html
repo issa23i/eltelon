@@ -1,6 +1,42 @@
-<div class="cita-playfair">
-  "El teatro es poesía que se sale del libro para hacerse humana."
-  <br />
-  — Federico García Lorca
-</div>
-<div class="cita-destacada">"La cultura es el alma de los pueblos."</div>
+<section>
+  <tui-carousel [duration]="4000" [(index)]="index">
+    <ng-container *ngFor="let item of items">
+      <div *tuiItem class="item">
+        <h3 tuiTitle class="cita-playfair">{{ item }}</h3>
+      </div>
+    </ng-container>
+  </tui-carousel>
+  <tui-pagination
+    size="s"
+    class="pagination"
+    [length]="items.length"
+    [(index)]="index"
+  />
+</section>
+<section>
+  <h2 tuiTitle>Bienvenidos a El Telón</h2>
+  <p>
+    La Asociación Cultural de Artes Escénicas El Telón nace con el propósito de
+    dar vida al teatro y a las artes escénicas en Andalucía. Sin ánimo de lucro,
+    trabajamos por la promoción cultural, la inclusión social y el desarrollo
+    artístico en todas sus formas.
+  </p>
+  <p>
+    Organizamos espectáculos, talleres, certámenes, encuentros y actividades
+    formativas que acercan el arte escénico a todas las personas, sin
+    distinción. Nuestro ámbito de actuación principal es Andalucía, aunque
+    colaboramos con entidades de otras comunidades para expandir el alcance de
+    nuestras iniciativas. Creemos en el poder transformador de la cultura, en la
+    igualdad, la diversidad, la cooperación y el respeto como pilares
+    fundamentales de nuestra acción.
+  </p>
+  <p>
+    Descubre nuestras actividades, únete a nuestra comunidad y forma parte de un
+    proyecto que pone el arte al servicio de la sociedad.
+  </p>
+</section>
+<section class="button">
+  <a href="/hazte-socio" target="_blank">
+    <button appearance="accent" tuiButton type="button">Hazte soci&#64;</button>
+  </a>
+</section>

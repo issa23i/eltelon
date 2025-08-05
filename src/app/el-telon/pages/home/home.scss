@@ -1,7 +1,8 @@
-.cita-destacada {
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
 }
 
 .cita-playfair {
@@ -11,4 +12,19 @@
   line-height: 1.6;
   text-align: center;
   color: var(--tui-title);
+}
+
+.pagination {
+  margin: 1rem auto 0;
+}
+
+.item {
+  padding: 1rem;
+  border: 1px solid var(--tui-border-normal);
+  border-radius: 1rem;
+}
+
+.button {
+  max-width: 13rem;
+  margin: auto;
 }
