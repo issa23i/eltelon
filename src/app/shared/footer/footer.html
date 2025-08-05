@@ -9,7 +9,13 @@
 
     <!-- Columna 2: Enlaces rápidos -->
     <nav class="footer-col footer-nav" aria-label="Enlaces principales">
-      <a *ngFor="let toLink of linksFooter" tuiLink [routerLink]="toLink.route">
+      <a
+        *ngFor="let toLink of linksFooter; let i = index"
+        tuiLink
+        [routerLink]="i === 3 ? null : toLink.route"
+        (click)="i === 3 ? $event.preventDefault() : null"
+        [ngClass]="{ disabled: i === 3 }"
+      >
         {{ toLink.label }}
       </a>
     </nav>
