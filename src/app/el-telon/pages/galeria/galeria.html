@@ -1,1 +1,15 @@
-<p>galeria works!</p>
+<!-- Galería -->
+<div class="gallery">
+  <div class="gallery-item" *ngFor="let img of images" (click)="verImagen(img)">
+    <img [src]="img.src" [alt]="img.alt" />
+    <div class="caption">{{ img.caption }}</div>
+  </div>
+</div>
+
+<!-- Plantilla de diálogo -->
+<ng-template #dialogTemplate let-data="data">
+  <div class="dialog-content">
+    <img [src]="data.src" [alt]="data.alt" />
+    <p class="caption">{{ data.caption }}</p>
+  </div>
+</ng-template>

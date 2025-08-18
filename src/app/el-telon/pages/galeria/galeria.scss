@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+
+  .gallery-item {
+    cursor: zoom-in;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--tui-text-secondary);
+    }
+  }
+}
+
+.dialog-content {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+
+  .caption {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--tui-text-secondary);
+  }
+}
