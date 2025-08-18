@@ -26,13 +26,19 @@ export const routes: Routes = [
   },
   {
     path: 'casting',
+    // loadComponent: () =>
+    //   import('./pages/casting/casting').then((m) => m.Casting),
+    // TODO: BORRAR CUANDO TENGA MÁS DETALLES Y CREAR LA PANTALLA CASTING
     loadComponent: () =>
-      import('./pages/casting/casting').then((m) => m.Casting),
+      import('./pages/contacto/contacto').then((m) => m.Contacto),
   },
   {
     path: 'hazte-socio',
+    // loadComponent: () =>
+    //   import('./pages/hazte-socio/hazte-socio').then((m) => m.HazteSocio),
+    // TODO: BORRAR CUANDO ESTÉ LA CUENTA CORRIENTE Y CREAR LA PANTALLA HAZTE SOCIO
     loadComponent: () =>
-      import('./pages/hazte-socio/hazte-socio').then((m) => m.HazteSocio),
+      import('./pages/contacto/contacto').then((m) => m.Contacto),
   },
   {
     path: 'contacto',
