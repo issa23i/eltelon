@@ -14,6 +14,7 @@ import {
   TuiTitle,
   TuiIcon,
   TuiLink,
+  TuiAppearance,
 } from '@taiga-ui/core';
 import {
   TuiCheckbox,
@@ -21,7 +22,7 @@ import {
   TuiInputChipComponent,
   TuiTextarea,
 } from '@taiga-ui/kit';
-import { TuiForm } from '@taiga-ui/layout';
+import { TuiCardLarge, TuiForm, TuiHeader } from '@taiga-ui/layout';
 import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
 
 @NgModule({
@@ -45,6 +46,9 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiInputPhoneModule,
     TuiIcon,
     TuiLink,
+    TuiAppearance,
+    TuiCardLarge,
+    TuiHeader,
     ...TuiTextfield,
     ...TuiHint,
   ],
@@ -71,6 +75,9 @@ import { TuiInputModule, TuiInputPhoneModule } from '@taiga-ui/legacy';
     TuiInputModule,
     TuiIcon,
     TuiLink,
+    TuiAppearance,
+    TuiCardLarge,
+    TuiHeader,
   ],
 })
 export class TaigaSharedModule {}

@@ -1,11 +1,11 @@
 import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TuiButton, TuiTitle } from '@taiga-ui/core';
 import { TuiCarousel, TuiPagination } from '@taiga-ui/kit';
+import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, TuiCarousel, TuiPagination, TuiTitle, TuiButton],
+  imports: [NgFor, TuiCarousel, TuiPagination, TaigaSharedModule],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
