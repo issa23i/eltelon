@@ -1,12 +1,16 @@
 <section>
-  <h2 tuiTitle>Nuestra esencia</h2>
+  <header tuiHeader="body-l">
+    <h6 tuiTitle>Nuestra esencia</h6>
+  </header>
   <p>
     El Telón es una asociación cultural sin ánimo de lucro dedicada a la
     promoción del teatro y las artes escénicas. Constituida con carácter
     indefinido, tiene su sede en Sevilla y desarrolla su actividad
     principalmente en la comunidad autónoma de Andalucía.
   </p>
-  <h2 tuiTitle>Nuestros fines</h2>
+  <header tuiHeader="body-l">
+    <h6 tuiTitle>Nuestros fines</h6>
+  </header>
   <p>
     Fomentar la creación, difusión y disfrute de espectáculos teatrales,
     musicales, circenses y de danza. Promover actividades culturales,
@@ -17,7 +21,9 @@
     grupos sociales. Defender los valores de igualdad, diversidad, libertad, no
     violencia y respeto a los derechos humanos.
   </p>
-  <h2 tuiTitle>Nuestra estructura</h2>
+  <header tuiHeader="body-l">
+    <h6 tuiTitle>Nuestra estructura</h6>
+  </header>
   <p>
     La asociación está dirigida por una Junta Directiva elegida
     democráticamente, cuyos cargos son gratuitos y tienen una duración de cinco
@@ -26,3 +32,37 @@
     jóvenes entre 12 y 25 años.
   </p>
 </section>
+<div class="card-grid">
+  <div
+    *ngFor="let item of items"
+    tuiAppearance="floating"
+    tuiCardLarge
+    class="card-item"
+  >
+    <header tuiHeader="body-m">
+      <h4 tuiTitle>{{ item.title }}</h4>
+    </header>
+    <img [src]="item.foto" [alt]="item.title" />
+    <section>{{ item.content }}</section>
+
+    <footer>
+      <button
+        appearance="primary"
+        size="m"
+        tuiButton
+        type="button"
+        (click)="open = opened(item)"
+      >
+        {{ item.buttonLabel }}
+      </button>
+    </footer>
+  </div>
+</div>
+
+<ng-template
+  let-observer
+  [tuiResponsiveDialogOptions]="options"
+  [(tuiResponsiveDialog)]="open"
+>
+  <div [innerHTML]="selected.texto"></div>
+</ng-template>
