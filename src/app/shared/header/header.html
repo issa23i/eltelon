@@ -18,7 +18,7 @@
     tuiTabFocusable
   >
     <ng-container *ngFor="let tab of tabs; let i = index">
-      <button *tuiItem tuiTab type="button" [disabled]="i === 2">
+      <button *tuiItem tuiTab type="button" [disabled]="i === 2 || i === 1">
         {{ tab.label }}
       </button>
     </ng-container>
