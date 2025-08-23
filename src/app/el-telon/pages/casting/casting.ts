@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
 
 @Component({
   selector: 'app-casting',
   standalone: true,
-  imports: [],
+  imports: [TaigaSharedModule],
   templateUrl: './casting.html',
-  styleUrls: ['./casting.scss']
+  styleUrls: ['./casting.scss'],
 })
-export class Casting {
-
-}
+export class Casting {}

@@ -30,7 +30,7 @@ export const routes: Routes = [
     //   import('./pages/casting/casting').then((m) => m.Casting),
     // TODO: BORRAR CUANDO TENGA MÁS DETALLES Y CREAR LA PANTALLA CASTING
     loadComponent: () =>
-      import('./pages/contacto/contacto').then((m) => m.Contacto),
+      import('./pages/casting/casting').then((m) => m.Casting),
   },
   {
     path: 'hazte-socio',
