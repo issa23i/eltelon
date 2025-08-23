@@ -64,26 +64,48 @@ export class QuienesSomos {
       title: 'Miguel Ángel Bascón Morales',
       buttonLabel: 'Aficionado',
       content: 'Vocal',
-      texto: 'ddd',
+      texto: `
+    <h3>Formación y vocación cultural</h3>
+    <ul>
+      <li>Graduado en Derecho, con especial interés en el ámbito cultural y social.</li>
+      <li>Ha desarrollado su carrera en la producción audiovisual, la economía social y la organización de eventos culturales.</li>
+      <li>Combina su formación jurídica con una sensibilidad artística que lo vincula al teatro aficionado.</li>
+    </ul>
+
+    <h3>Gestión y asesoramiento escénico</h3>
+    <ul>
+      <li>Asesor de iniciativas y entidades dedicadas a las artes escénicas, tanto en el ámbito local como regional.</li>
+      <li>Colabora en la planificación de actividades culturales inclusivas, con enfoque comunitario.</li>
+      <li>Participa activamente en la vida asociativa de El Telón, aportando visión estratégica y organizativa.</li>
+    </ul>
+  `,
       foto: 'assets/img/miguel.png',
     },
     {
       title: 'Francisco Morilla Guerrero',
-      buttonLabel: 'Actor aficionado',
+      buttonLabel: 'Director',
       content: 'Vicepresidente y tesorería',
-      texto: 'lalala',
+      texto: `
+    <h3>Trayectoria audiovisual</h3>
+    <ul>
+      <li>Director de cine realizador con amplia experiencia en proyectos independientes.</li>
+      <li>Colaborador habitual de <strong>Viento Sur</strong>, plataforma cultural comprometida con la transformación social.</li>
+      <li>Su mirada cinematográfica aporta profundidad estética a las propuestas escénicas de El Telón.</li>
+    </ul>
+
+  `,
       foto: 'assets/img/paco.png',
     },
     {
       title: 'Isabel Pastor López',
       buttonLabel: 'Actriz aficionada',
       content: 'Secretaria',
-      texto: `<h3>Los comienzos (2024)</h3>
-<ul>
-  <li>Organiza el taller de teatro El Telón con el fin de acercarse al teatro</li>
-  <li>Estudia su papel de pastora en la obra La Farsa de Maître Pathelin</li>
-  
-</ul>`,
+      texto: `  <h3>Descubrimiento y vocación escénica</h3>
+    <ul>
+      <li>Se incorpora a El Telón en 2024, atraída por la magia del teatro y el deseo de explorar nuevas formas de expresión.</li>
+      <li>Organiza el primer taller de iniciación teatral con entusiasmo y compromiso, demostrando una sensibilidad especial para el trabajo en grupo.</li>
+      <li>Estudia su primer papel de pastora en <em>La Farsa de Maître Pathelin</em>, enfrentando el reto actoral con dedicación y curiosidad.</li>
+    </ul>`,
       foto: 'assets/img/isabel.png',
     },
   ];
