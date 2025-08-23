@@ -27,7 +27,7 @@ export class QuienesSomos {
   <li>Participa en el montaje de <em>El Retablo del Flautista</em>, encargándose de vestuario, maquillaje, actuación, música y coreografía.</li>
   <li>Realiza 17 funciones con gran éxito.</li>
   <li>Asiste a ensayos del grupo <strong>Esperpento</strong>, donde se introduce al método Stanislavski y la ideología brechtiana.</li>
-  <li>Cursa interpretación e improvisación, y se presenta por libre a los tres cursos de la Escuela de Arte Dramático, criticando duramente el nivel docente.</li>
+  <li>Cursa interpretación e improvisación, y se presenta por libre a los tres cursos de la Escuela de Arte Dramático.</li>
   <li>Entre 1974 y 1993, se dedica a observar y asesorar grupos emergentes.</li>
 </ul>
 
