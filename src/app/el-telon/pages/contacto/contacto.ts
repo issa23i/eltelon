@@ -13,10 +13,12 @@ import {
 } from '@angular/forms';
 import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
 import { tuiValidationErrorsProvider } from '@taiga-ui/kit';
-import { of } from 'rxjs';
+import { concatMap, of } from 'rxjs';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaService } from '../../../services/recaptcha/recaptcha-service';
 import { environment } from '../../../../environments/environment';
+import { Email } from '../../../services/email/email';
+import { IContacto } from '../../../interface/contacto.interface';
 
 @Component({
   selector: 'app-contacto',
@@ -44,6 +46,7 @@ export class Contacto {
   private readonly cdRef = inject(ChangeDetectorRef);
   private readonly fb = inject(FormBuilder);
   private readonly recaptchaService = inject(RecaptchaService);
+  private readonly emailService = inject(Email);
 
   readonly siteKey = environment.recaptchaSiteKey;
 
@@ -70,24 +73,39 @@ export class Contacto {
 
   onCaptchaResolved(token: string | null): void {
     this.cdRef.detectChanges();
-    if (token) {
-      this.form.patchValue({ recaptcha: token });
+    console.log('Token recibido:', token);
 
-      if (this.form.valid) {
-        this.recaptchaService.verifyToken(token).subscribe({
-          next: (_res) => {
-            // TODO: Envío del email
-          },
-          error: (err) => {
-            console.error('Falló la verificación:', err);
-            // TODO: Snackbar aviso usuario
-          },
-        });
-      } else {
-        this.form.markAllAsTouched();
-      }
-    } else {
+    if (!token) {
       console.error('Captcha token es null');
+      return;
     }
+
+    this.form.patchValue({ recaptcha: token });
+
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    this.recaptchaService
+      .verifyToken(token)
+      .pipe(
+        concatMap((res) => {
+          console.log('Verificación exitosa:', res);
+          return this.emailService.enviarFormulario(
+            this.form.value as IContacto
+          );
+        })
+      )
+      .subscribe({
+        next: () => {
+          console.log('Correo enviado correctamente');
+          // Aquí podrías resetear el formulario o mostrar un snackbar
+        },
+        error: (err) => {
+          console.error('Error en el proceso:', err);
+          // Snackbar de error
+        },
+      });
   }
 }
