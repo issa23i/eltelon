@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { IContacto } from '../../interface/contacto.interface';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,6 @@ export class Email {
   private readonly apiBase = environment.apiBase;
 
   enviarFormulario(data: IContacto): Observable<void> {
-    return this.http.post<void>(`${this.apiBase}/api/mail`, data);
+    return this.http.post<void>(`${this.apiBase}/mail`, data);
   }
 }
