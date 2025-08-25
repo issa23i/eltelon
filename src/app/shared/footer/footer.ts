@@ -12,8 +12,8 @@ import { CommonModule } from '@angular/common';
 export class Footer {
   readonly linksFooter = [
     { label: 'Inicio', route: '/' },
-    // { label: 'Casting', route: '/casting' },
-    { label: 'Contacto', route: '/contacto' },
+    { label: 'Casting', route: '/casting' },
+    // { label: 'Contacto', route: '/contacto' },
     // { label: 'Obras', route: '/obras' },
     { label: 'Hazte socio', route: '/hazte-socio' },
     { label: 'Política de privacidad', route: '/privacidad' },
