@@ -5,13 +5,7 @@ import {
   inject,
   ViewChild,
 } from '@angular/core';
-import {
-  FormBuilder,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
+import { FormBuilder, Validators } from '@angular/forms';
 import { tuiValidationErrorsProvider } from '@taiga-ui/kit';
 import { concatMap, of } from 'rxjs';
 import { RecaptchaModule } from 'ng-recaptcha';
@@ -19,16 +13,12 @@ import { RecaptchaService } from '../../../services/recaptcha/recaptcha-service'
 import { environment } from '../../../../environments/environment';
 import { Email } from '../../../services/email/email';
 import { IContacto } from '../../../interface/contacto.interface';
+import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.module';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    TaigaSharedModule,
-    RecaptchaModule,
-    FormsModule,
-  ],
+  imports: [TaigaSharedFormsModule, RecaptchaModule],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

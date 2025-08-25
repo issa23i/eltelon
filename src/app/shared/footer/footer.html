@@ -10,11 +10,15 @@
     <!-- Columna 2: Enlaces rápidos -->
     <nav class="footer-col footer-nav" aria-label="Enlaces principales">
       <a
-        *ngFor="let toLink of linksFooter; let i = index"
+        *ngFor="let toLink of linksFooter"
         tuiLink
-        [routerLink]="i === 3 ? null : toLink.route"
-        (click)="i === 3 ? $event.preventDefault() : null"
-        [ngClass]="{ disabled: i === 3 }"
+        [routerLink]="
+          toLink.label === 'Casting' || 'Obras' ? toLink.route : null
+        "
+        (click)="
+          toLink.label === 'Casting' || 'Obras' ? null : $event.preventDefault()
+        "
+        [ngClass]="{ disabled: !(toLink.label === 'Casting' || 'Obras') }"
       >
         {{ toLink.label }}
       </a>

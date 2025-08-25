@@ -1,9 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
+import { TuiTitle } from '@taiga-ui/core';
+import { TuiHeader } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-privacidad',
-  imports: [TaigaSharedModule],
+  imports: [TuiTitle, TuiHeader],
   templateUrl: './privacidad.html',
   styleUrl: './privacidad.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

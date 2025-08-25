@@ -5,10 +5,11 @@ import {
   TuiResponsiveDialog,
   TuiResponsiveDialogOptions,
 } from '@taiga-ui/addon-mobile';
+import { TuiCardLarge } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-quienes-somos',
-  imports: [TaigaSharedModule, TuiResponsiveDialog],
+  imports: [TaigaSharedModule, TuiResponsiveDialog, TuiCardLarge],
   templateUrl: './quienes-somos.html',
   styleUrls: ['./quienes-somos.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

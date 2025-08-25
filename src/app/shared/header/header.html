@@ -17,8 +17,13 @@
     (activeItemIndexChange)="onTabChange($event)"
     tuiTabFocusable
   >
-    <ng-container *ngFor="let tab of tabs; let i = index">
-      <button *tuiItem tuiTab type="button" [disabled]="i === 2 || i === 1">
+    <ng-container *ngFor="let tab of tabs">
+      <button
+        *tuiItem
+        tuiTab
+        type="button"
+        [disabled]="!(tab.label === 'Casting' || 'Obras')"
+      >
         {{ tab.label }}
       </button>
     </ng-container>
