@@ -9,29 +9,55 @@
   align-items: center;
   width: 42vw;
 }
+
 .logo-container img {
-  justify-content: flex-start;
-  width: auto;
   height: 62px;
+  max-width: 100%;
 }
-h2,
+
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // evita overflow
+}
+
 h1 {
-  margin: 4px 8px 8px;
+  margin: 0.25rem;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0.25rem;
   font-family: "Poppins", sans-serif;
 }
 header {
-  padding: 1rem 3rem 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
 }
 
 @media #{ $tui-desktop } {
   h2 {
     display: none;
   }
-  .test,
-  .column {
-    align-self: center;
-  }
   .logo-container > img {
     height: 52px;
+  }
+}
+
+@media #{ $tui-mobile } {
+  header {
+    padding: 0.5rem 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .tabs {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 }
