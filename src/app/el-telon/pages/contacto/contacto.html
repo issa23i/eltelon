@@ -80,3 +80,6 @@
 
   <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>
+<ng-template let-observer [(tuiResponsiveDialog)]="snackBarOpen.open">
+  <div [innerHTML]="snackBarOpen.text"></div>
+</ng-template>

@@ -14,11 +14,12 @@ import { environment } from '../../../../environments/environment';
 import { Email } from '../../../services/email/email';
 import { IContacto } from '../../../interface/contacto.interface';
 import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.module';
+import { TuiResponsiveDialog } from '@taiga-ui/addon-mobile';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [TaigaSharedFormsModule, RecaptchaModule],
+  imports: [TaigaSharedFormsModule, RecaptchaModule, TuiResponsiveDialog],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -38,6 +39,8 @@ export class Contacto {
   private readonly recaptchaService = inject(RecaptchaService);
   private readonly emailService = inject(Email);
 
+  snackBarOpen: { open: boolean; text: string } = { open: false, text: '' };
+
   readonly siteKey = environment.recaptchaSiteKey;
 
   readonly form = this.fb.group({
@@ -54,7 +57,7 @@ export class Contacto {
   constructor() {}
 
   enviar(): void {
-    this.ejecutarCaptcha(); // Solo ejecuta captcha, no envía aún
+    this.ejecutarCaptcha();
   }
 
   ejecutarCaptcha(): void {
@@ -90,11 +93,19 @@ export class Contacto {
       .subscribe({
         next: () => {
           console.log('Correo enviado correctamente');
-          // Aquí podrías resetear el formulario o mostrar un snackbar
+          this.form.reset();
+          this.snackBarOpen = {
+            open: true,
+            text: 'Formulario enviado. En breve nos pondremos en contacto contigo. Gracias.',
+          };
         },
         error: (err) => {
           console.error('Error en el proceso:', err);
-          // Snackbar de error
+          this.form.reset();
+          this.snackBarOpen = {
+            open: true,
+            text: 'Hubo un problema al enviar el formulario, por favor inténtelo de nuevo pasados unos minutos. Gracias.',
+          };
         },
       });
   }
