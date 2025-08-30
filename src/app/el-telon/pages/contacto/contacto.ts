@@ -15,6 +15,7 @@ import { Email } from '../../../services/email/email';
 import { IContacto } from '../../../interface/contacto.interface';
 import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.module';
 import { TuiResponsiveDialog } from '@taiga-ui/addon-mobile';
+import { CookiesConsentService } from '../../../services/cookies-consent-service/cookies-consent-service';
 
 @Component({
   selector: 'app-contacto',
@@ -34,10 +35,14 @@ import { TuiResponsiveDialog } from '@taiga-ui/addon-mobile';
 })
 export class Contacto {
   @ViewChild('captchaRef') recaptchaComponent!: any;
+
+  cookiesAceptadas = false;
+
   private readonly cdRef = inject(ChangeDetectorRef);
   private readonly fb = inject(FormBuilder);
   private readonly recaptchaService = inject(RecaptchaService);
   private readonly emailService = inject(Email);
+  private readonly cookiesConsentService = inject(CookiesConsentService);
 
   snackBarOpen: { open: boolean; text: string } = { open: false, text: '' };
 
@@ -56,12 +61,25 @@ export class Contacto {
 
   constructor() {}
 
+  ngOnInit(): void {
+    this.cookiesConsentService.consent$.subscribe((acepta) => {
+      this.cookiesAceptadas = acepta;
+    });
+  }
+
   enviar(): void {
     this.ejecutarCaptcha();
   }
 
   ejecutarCaptcha(): void {
-    this.recaptchaComponent.execute();
+    try {
+      this.recaptchaComponent.execute();
+    } catch (error) {
+      this.snackBarOpen = {
+        open: true,
+        text: 'Ups... no se pudo enviar el formulario. Revisa si has aceptado las cookies o vuelve a intentarlo más tarde.',
+      };
+    }
   }
 
   onCaptchaResolved(token: string | null): void {
@@ -83,8 +101,7 @@ export class Contacto {
     this.recaptchaService
       .verifyToken(token)
       .pipe(
-        concatMap((res) => {
-          console.log('Verificación exitosa:', res);
+        concatMap(() => {
           return this.emailService.enviarFormulario(
             this.form.value as IContacto
           );
@@ -92,7 +109,6 @@ export class Contacto {
       )
       .subscribe({
         next: () => {
-          console.log('Correo enviado correctamente');
           this.form.reset();
           this.snackBarOpen = {
             open: true,
@@ -104,7 +120,7 @@ export class Contacto {
           this.form.reset();
           this.snackBarOpen = {
             open: true,
-            text: 'Hubo un problema al enviar el formulario, por favor inténtelo de nuevo pasados unos minutos. Gracias.',
+            text: 'Ups... no se pudo enviar el formulario, vuelve a intentarlo más tarde.',
           };
         },
       });
