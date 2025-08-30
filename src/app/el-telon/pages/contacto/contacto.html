@@ -71,12 +71,14 @@
     formControlName="condiciones"
     [error]="[] | tuiFieldError | async"
   />
-  <re-captcha
-    #captchaRef
-    [siteKey]="siteKey"
-    size="invisible"
-    (resolved)="onCaptchaResolved($event)"
-  ></re-captcha>
+  <ng-template [ngIf]="cookiesAceptadas">
+    <re-captcha
+      #captchaRef
+      [siteKey]="siteKey"
+      size="invisible"
+      (resolved)="onCaptchaResolved($event)"
+    ></re-captcha>
+  </ng-template>
 
   <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>

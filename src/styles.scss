@@ -62,3 +62,21 @@ section {
   flex-direction: column;
   align-content: center;
 }
+
+// Cookies
+tui-dialog[data-appearance="sheet"] {
+  inline-size: 100vw !important;
+  padding: 1.25rem 1rem max(1.25rem, env(safe-area-inset-bottom));
+
+  position: fixed;
+  bottom: 0;
+
+  &.tui-enter,
+  &.tui-leave {
+    animation-name: tuiSlide;
+  }
+
+  .t-close {
+    background: none !important;
+  }
+}
