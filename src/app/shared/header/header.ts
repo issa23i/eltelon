@@ -18,7 +18,7 @@ import { TuiTabs } from '@taiga-ui/kit';
 })
 export class Header {
   readonly tabs = [
-    { label: 'Inicio', route: '/' },
+    { label: 'Inicio', route: '/home' },
     //{ label: 'Obras', route: '/obras' }, // 2 disabled
     { label: 'Hazte socio', route: '/hazte-socio' },
     { label: 'Quiénes somos', route: '/quienes-somos' },
@@ -27,7 +27,7 @@ export class Header {
     { label: 'Galería', route: '/galeria' },
   ];
 
-  activeIndex = 0;
+  activeIndex = NaN;
 
   constructor(private readonly router: Router) {}
 
