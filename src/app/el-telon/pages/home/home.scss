@@ -28,3 +28,54 @@
   max-width: 13rem;
   margin: auto;
 }
+.pt-32 {
+  padding-top: 32px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseColor {
+  0% {
+    transform: scale(1);
+    background-color: #ffcc65; // color base
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #ff9f40; // color intermedio
+  }
+  100% {
+    transform: scale(1);
+    background-color: #ffcc65; // vuelve al base
+  }
+}
+
+.animado {
+  animation: pulseColor 1.5s infinite;
+  border: none;
+  color: #000000;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #e91e63; // color al pasar el ratón
+  }
+}
