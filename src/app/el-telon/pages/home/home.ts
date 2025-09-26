@@ -1,14 +1,20 @@
 import { NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { TuiCarousel, TuiPagination } from '@taiga-ui/kit';
 import { TaigaSharedModule } from '../../../shared/taiga-shared.module';
+import { News } from '../../../shared/news/news';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, TuiCarousel, TuiPagination, TaigaSharedModule],
+  imports: [NgFor, TuiCarousel, TuiPagination, TaigaSharedModule, News],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Home {
   protected index = 2;
