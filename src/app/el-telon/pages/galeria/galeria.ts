@@ -29,9 +29,9 @@ export class Galeria {
       caption: 'Primera lectura',
     },
     {
-      src: 'assets/img/ENSAYO2.jpg',
+      src: 'assets/img/ENSAYO2.png',
       alt: 'Ensayo 2',
-      caption: 'Concentración antes del ensayo',
+      caption: 'Lectura antes del ensayo',
     },
     {
       src: 'assets/img/ENSAYO3.jpeg',
