@@ -67,6 +67,20 @@ p {
   align-content: center;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+
+  > a {
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+}
+
 // Cookies
 tui-dialog[data-appearance="sheet"] {
   inline-size: 100vw !important;
