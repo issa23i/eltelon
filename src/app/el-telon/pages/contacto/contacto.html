@@ -1,7 +1,14 @@
+@if (enviado) {
+  <section class="confirmacion" aria-live="polite">
+    <h2>Mensaje enviado</h2>
+    <p>Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
+    <a href="/contacto">Enviar otro mensaje</a>
+  </section>
+} @else {
 <form
   name="contacto"
   method="POST"
-  action="/gracias.html"
+  action="/contacto?enviado=true"
   data-netlify="true"
   netlify-honeypot="bot-field"
   ngNoForm
@@ -63,3 +70,4 @@
 
   <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>
+}
