@@ -20,6 +20,18 @@
   white-space: nowrap;
 }
 
+.mensaje-formulario {
+  margin: 0;
+
+  &.exito {
+    color: var(--tui-status-positive);
+  }
+
+  &.error {
+    color: var(--tui-status-negative);
+  }
+}
+
 .boton-enviar {
   display: flex;
   justify-content: flex-end;

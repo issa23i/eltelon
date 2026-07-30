@@ -7,7 +7,9 @@
   tuiForm="l"
   [style.max-width.rem]="35"
   class="formulario"
+  (submit)="enviar($event)"
 >
+  <input type="hidden" name="form-name" value="contacto" />
   <p class="honeypot" aria-hidden="true">
     <label>No rellenes este campo <input name="bot-field" tabindex="-1" /></label>
   </p>
@@ -60,5 +62,23 @@
     <a href="/aviso-legal" target="_blank"> condiciones legales </a>
   </label>
 
-  <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
+  <button
+    appearance="outline"
+    tuiButton
+    size="l"
+    type="submit"
+    [disabled]="estado() === 'enviando'"
+  >
+    {{ estado() === 'enviando' ? 'Enviando…' : 'Enviar' }}
+  </button>
+
+  @if (estado() === 'enviado') {
+    <p class="mensaje-formulario exito" aria-live="polite">
+      Formulario enviado. En breve nos pondremos en contacto contigo. Gracias.
+    </p>
+  } @else if (estado() === 'error') {
+    <p class="mensaje-formulario error" role="alert">
+      No se pudo enviar el formulario. Vuelve a intentarlo más tarde.
+    </p>
+  }
 </form>
