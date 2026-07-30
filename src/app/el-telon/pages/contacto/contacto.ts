@@ -1,5 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.module';
 
 @Component({
@@ -10,7 +9,4 @@ import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.modul
   styleUrls: ['./contacto.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class Contacto {
-  readonly enviado =
-    inject(ActivatedRoute).snapshot.queryParamMap.get('enviado') === 'true';
-}
+export class Contacto {}
