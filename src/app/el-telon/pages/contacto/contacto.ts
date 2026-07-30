@@ -11,11 +11,26 @@ import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.modul
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Contacto {
+  private static readonly telefonoEspanol = /^(?:\+34)?[6789]\d{8}$/;
+
   readonly estado = signal<'inicial' | 'enviando' | 'enviado' | 'error'>(
     'inicial'
   );
 
   private readonly alertas = inject(TuiAlertService);
+
+  normalizarTelefono(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const conPrefijo = input.value.startsWith('+');
+    const digitos = input.value.replace(/\D/g, '');
+
+    input.value = `${conPrefijo ? '+' : ''}${digitos}`.slice(0, 12);
+    input.setCustomValidity(
+      input.value && !Contacto.telefonoEspanol.test(input.value)
+        ? 'Introduce un teléfono español válido: 612345678 o +34612345678.'
+        : ''
+    );
+  }
 
   async enviar(event: SubmitEvent): Promise<void> {
     event.preventDefault();

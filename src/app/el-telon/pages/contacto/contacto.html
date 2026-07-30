@@ -37,6 +37,11 @@
       name="telefono"
       placeholder="Teléfono de contacto"
       inputmode="tel"
+      autocomplete="tel"
+      pattern="(?:\+34)?[6789][0-9]{8}"
+      maxlength="12"
+      title="Introduce un teléfono español válido: 612345678 o +34612345678."
+      (input)="normalizarTelefono($event)"
       required
     />
   </tui-textfield>
