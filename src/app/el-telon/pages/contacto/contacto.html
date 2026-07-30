@@ -71,14 +71,4 @@
   >
     {{ estado() === 'enviando' ? 'Enviando…' : 'Enviar' }}
   </button>
-
-  @if (estado() === 'enviado') {
-    <p class="mensaje-formulario exito" aria-live="polite">
-      Formulario enviado. En breve nos pondremos en contacto contigo. Gracias.
-    </p>
-  } @else if (estado() === 'error') {
-    <p class="mensaje-formulario error" role="alert">
-      No se pudo enviar el formulario. Vuelve a intentarlo más tarde.
-    </p>
-  }
 </form>

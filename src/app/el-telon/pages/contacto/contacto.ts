@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { TuiAlertService } from '@taiga-ui/core';
 import { TaigaSharedFormsModule } from '../../../shared/taiga-shared-forms.module';
 
 @Component({
@@ -13,6 +14,8 @@ export class Contacto {
   readonly estado = signal<'inicial' | 'enviando' | 'enviado' | 'error'>(
     'inicial'
   );
+
+  private readonly alertas = inject(TuiAlertService);
 
   async enviar(event: SubmitEvent): Promise<void> {
     event.preventDefault();
@@ -43,9 +46,23 @@ export class Contacto {
       }
 
       form.reset();
-      this.estado.set('enviado');
+      this.estado.set('inicial');
+      this.alertas
+        .open('Hemos recibido tu mensaje. Te responderemos lo antes posible.', {
+          appearance: 'positive',
+          label: '¡Formulario enviado!',
+          autoClose: 6_000,
+        })
+        .subscribe();
     } catch {
-      this.estado.set('error');
+      this.estado.set('inicial');
+      this.alertas
+        .open('No se pudo enviar el formulario. Vuelve a intentarlo más tarde.', {
+          appearance: 'negative',
+          label: 'Ha ocurrido un error',
+          autoClose: 6_000,
+        })
+        .subscribe();
     }
   }
 }
