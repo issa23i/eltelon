@@ -1,87 +1,64 @@
 <form
-  [formGroup]="form"
+  name="contacto"
+  method="POST"
+  action="/gracias.html"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
   tuiForm="l"
-  [formGroup]="form"
   [style.max-width.rem]="35"
-  (ngSubmit)="enviar()"
   class="formulario"
 >
+  <p class="honeypot" aria-hidden="true">
+    <label>No rellenes este campo <input name="bot-field" tabindex="-1" /></label>
+  </p>
+
   <tui-textfield>
     <label tuiLabel>Nombre</label>
-    <input tuiTextfield formControlName="nombre" placeholder="Nombre" />
+    <input tuiTextfield name="nombre" placeholder="Nombre" required />
   </tui-textfield>
-  <tui-error formControlName="nombre" [error]="[] | tuiFieldError | async" />
 
   <tui-textfield>
     <label tuiLabel>Primer apellido</label>
-    <input
-      tuiTextfield
-      formControlName="apellido1"
-      placeholder="Primer apellido"
-    />
+    <input tuiTextfield name="apellido1" placeholder="Primer apellido" required />
   </tui-textfield>
-  <tui-error formControlName="apellido1" [error]="[] | tuiFieldError | async" />
 
   <tui-textfield>
     <label tuiLabel>Segundo apellido (opcional)</label>
-    <input
-      tuiTextfield
-      formControlName="apellido2"
-      placeholder="Segundo apellido (opcional)"
-    />
+    <input tuiTextfield name="apellido2" placeholder="Segundo apellido (opcional)" />
   </tui-textfield>
 
-  <tui-input-phone
-    tuiTextfield
-    [countryCode]="'+34'"
-    [countries]="[34]"
-    formControlName="telefono"
-    >Teléfono de contacto
-  </tui-input-phone>
-  <tui-error formControlName="telefono" [error]="[] | tuiFieldError | async" />
+  <tui-textfield>
+    <label tuiLabel>Teléfono de contacto</label>
+    <input
+      tuiTextfield
+      type="tel"
+      name="telefono"
+      placeholder="Teléfono de contacto"
+      inputmode="tel"
+      required
+    />
+  </tui-textfield>
 
   <tui-textfield>
     <label tuiLabel>Mensaje</label>
     <textarea
-      formControlName="mensaje"
-      placeholder="Escribe tu mensaje aquí (Opcional)"
+      name="mensaje"
+      placeholder="Escribe tu mensaje aquí (opcional)"
       tuiTextarea
-      [max]="10"
-      [min]="4"
     ></textarea>
   </tui-textfield>
 
   <label class="checkbox-row">
-    <input tuiCheckbox type="checkbox" formControlName="privacidad" />
+    <input tuiCheckbox type="checkbox" name="privacidad" value="aceptada" required />
     He leído y acepto la
     <a href="/privacidad" target="_blank"> política de privacidad </a>
   </label>
 
-  <tui-error
-    formControlName="privacidad"
-    [error]="[] | tuiFieldError | async"
-  />
-
   <label class="checkbox-row">
-    <input tuiCheckbox type="checkbox" formControlName="condiciones" />
+    <input tuiCheckbox type="checkbox" name="condiciones" value="aceptadas" required />
     Acepto las
     <a href="/aviso-legal" target="_blank"> condiciones legales </a>
   </label>
-  <tui-error
-    formControlName="condiciones"
-    [error]="[] | tuiFieldError | async"
-  />
-  <ng-template [ngIf]="cookiesAceptadas">
-    <re-captcha
-      #captchaRef
-      [siteKey]="siteKey"
-      size="invisible"
-      (resolved)="onCaptchaResolved($event)"
-    ></re-captcha>
-  </ng-template>
 
   <button appearance="outline" tuiButton size="l" type="submit">Enviar</button>
 </form>
-<ng-template let-observer [(tuiResponsiveDialog)]="snackBarOpen.open">
-  <div [innerHTML]="snackBarOpen.text"></div>
-</ng-template>

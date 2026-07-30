@@ -11,6 +11,15 @@
   gap: 1.5rem;
 }
 
+.honeypot {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .boton-enviar {
   display: flex;
   justify-content: flex-end;

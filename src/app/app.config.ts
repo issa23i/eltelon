@@ -17,7 +17,6 @@ import {
   tuiLanguageSwitcher,
 } from '@taiga-ui/i18n';
 import { of } from 'rxjs';
-import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -34,6 +33,5 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
     provideEventPlugins(),
-    provideHttpClient(withFetch()),
   ],
 };

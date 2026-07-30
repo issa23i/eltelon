@@ -85,5 +85,16 @@
   </head>
   <body>
     <app-layout></app-layout>
+    <!-- Netlify necesita una versión estática para detectar el formulario durante el despliegue. -->
+    <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="nombre" />
+      <input name="apellido1" />
+      <input name="apellido2" />
+      <input name="telefono" />
+      <textarea name="mensaje"></textarea>
+      <input name="privacidad" />
+      <input name="condiciones" />
+    </form>
   </body>
 </html>
