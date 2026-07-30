@@ -4,6 +4,7 @@
   action="/gracias.html"
   data-netlify="true"
   netlify-honeypot="bot-field"
+  ngNoForm
   tuiForm="l"
   [style.max-width.rem]="35"
   class="formulario"
@@ -49,13 +50,13 @@
   </tui-textfield>
 
   <label class="checkbox-row">
-    <input tuiCheckbox type="checkbox" name="privacidad" value="aceptada" required />
+    <input type="checkbox" name="privacidad" value="aceptada" required />
     He leído y acepto la
     <a href="/privacidad" target="_blank"> política de privacidad </a>
   </label>
 
   <label class="checkbox-row">
-    <input tuiCheckbox type="checkbox" name="condiciones" value="aceptadas" required />
+    <input type="checkbox" name="condiciones" value="aceptadas" required />
     Acepto las
     <a href="/aviso-legal" target="_blank"> condiciones legales </a>
   </label>
